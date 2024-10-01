@@ -46,7 +46,7 @@ header .presentation {
     background-size: cover;
     background-position: center center;
     background-blend-mode: multiply;
-    background-color: #ffe8d3;
+    background-color: #f16f6f60;
     position: relative;
 }
 
@@ -58,18 +58,18 @@ header .presentation::after {
     width: 300px;
     font-size: 40px;
     font-weight: 600;
-    color: white;
+    color: #0026ff;
 }
 
 header .presentation::before {
     content: 'аппетит на высший класс, за пиццей все придут к нам в раз!';
     position: absolute;
-    top: 200px;
+    top: 300px;
     left: 50px;
     width: 300px;
     font-size: 15px;
     font-weight: 300;
-    color: white;
+    color: #0026ff;
 }
 
 footer {
