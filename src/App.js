@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Items from "./components/Items";
 
 class App extends React.Component {
   constructor(props){
@@ -13,71 +14,71 @@ class App extends React.Component {
           img: 'margharita.jpg',
           desc: 'Маргарита самая вкусная ',
           category: 'pizzas',
-          price: ''
+          price: '299₽'
         },
         {
           id: 2,
           title: 'Пицца Неаполитанская',
           img: 'neopal.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Нет, неаполитанская самая вкусная ',
           category: 'pizzas',
-          price: ''
+          price: '549₽'
         },
         {
           id: 3,
           title: 'Пицца Маринара',
           img: 'marinara.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Маринара самая сочная ',
           category: 'pizzas',
-          price: ''
+          price: '499₽'
         },
         {
           id: 4,
           title: 'Пицца Пульеза',
           img: 'pulyesa.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Пульеза самая пульезная ',
           category: 'pizzas',
-          price: ''
+          price: '699₽'
         },
         {
           id: 5,
           title: 'Пицца Четыре сезона',
           img: 'four_seasons.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Четрые сезона как времена года ',
           category: 'pizzas',
-          price: ''
+          price: '599₽'
         },
         {
           id: 6,
           title: 'Пицца Четыре сыра',
           img: 'four_cheese.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Четыре сыра и самые сырные сыры ',
           category: 'pizzas',
-          price: ''
+          price: '599₽'
         },
         {
           id: 7,
           title: 'Пицца Капричоза',
           img: 'caprikoza.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Капрочоза капризничает ',
           category: 'pizzas',
-          price: ''
+          price: '499₽'
         },
         {
           id: 8,
           title: 'Пицца Кальцоне',
           img: 'calchone.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Кальцоне как кольцо ',
           category: 'pizzas',
-          price: ''
+          price: '699₽'
         },
         {
           id: 9,
           title: 'Пицца Дьябола',
           img: 'demon.jpg',
-          desc: 'Маргарита самая вкусная ',
+          desc: 'Дьябола как самый настоящий дьявол ',
           category: 'pizzas',
-          price: ''
+          price: '666₽'
         }
       ]
     }
@@ -88,6 +89,7 @@ class App extends React.Component {
     return(
     <div className="wrapper">
       <Header />
+      <Items items={this.state.items} />
       <Footer />
     </div>
   )

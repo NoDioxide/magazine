@@ -58,7 +58,7 @@ header .presentation::after {
     width: 300px;
     font-size: 40px;
     font-weight: 600;
-    color: #0026ff;
+    color: #fff;
 }
 
 header .presentation::before {
@@ -68,8 +68,63 @@ header .presentation::before {
     left: 50px;
     width: 300px;
     font-size: 15px;
-    font-weight: 300;
-    color: #0026ff;
+    font-weight: 600;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: #f2f2f2;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+main .item img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 500ms ease;
+}
+
+main .item img:hover {
+    transform: scale(1.05);
+}
+
+main h2, main p, main b {
+    margin: 10px 20px;
+    color: #333;
+}
+
+main b {
+    color: #25642a;
+}
+
+main .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: #e86100;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 500ms ease;
+}
+
+main .add-to-cart:hover {
+    transform: scale(1.25) translateY(-5px);
 }
 
 footer {
