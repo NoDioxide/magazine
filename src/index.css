@@ -17,6 +17,10 @@ body {
     margin: 50px auto;
 }
 
+header {
+    position: relative;
+}
+
 header .logo {
     font-weight: 600;
     font-size: 20px;
@@ -36,6 +40,28 @@ header ul.nav li {
 
 header ul.nav li:hover {
     opacity: 0.5;
+}
+
+header .shop-piz-btn {
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease
+}
+
+header .shop-piz-btn:hover,
+header .shop-piz-btn.active {
+    color: #e86100;
+    transform: scale(1.25);
+}
+
+header .shop-cart {
+    z-index: 10;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    min-height: 100px;
+    background: #ff0000;
 }
 
 header .presentation {
