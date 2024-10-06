@@ -1,8 +1,27 @@
 import React, { useState } from 'react'
 import { FaShoppingBasket } from "react-icons/fa";
 import { FaPizzaSlice } from "react-icons/fa";
+import Order from './Order';
 
-export default function Header() {
+const showOrders = (props) => {
+  return (
+    <div>
+      {props.orders.map(el => (
+        <Order key={el.id} item={el}/>
+      ))}
+    </div>
+  )
+}
+
+const showNothing = () => {
+  return (
+    <div className='empty'>
+      <h2>Корзина пуста!</h2>
+    </div>
+  )
+}
+
+export default function Header(props) {
   let [cartOpen, setCartOpen] = useState(false)
 
   return (
@@ -17,7 +36,10 @@ export default function Header() {
         <FaShoppingBasket onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-piz-btn ${cartOpen && 'active'}`}/>
 
         {cartOpen && (
-          <div className='shop-cart'></div>
+          <div className='shop-cart'>
+            {props.orders.length > 0 ?
+            showOrders(props) : showNothing()}
+          </div>
         )}
       </div>
       <div className='presentation'></div>

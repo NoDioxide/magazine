@@ -60,8 +60,37 @@ header .shop-cart {
     top: 30px;
     right: 0;
     width: 450px;
-    min-height: 100px;
-    background: #ff0000;
+    background: #e86100;
+    border-radius: 10px 0 0 10px;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+header .shop-cart .empty h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+header .shop-cart .item {
+    width: 100%;   
+    float: right;
+    margin-bottom: 20px;
+}
+
+header .shop-cart .item img {
+    width: 80px;
+    float: left;
+    margin-right: 20px;
+}
+
+header .shop-cart .item h2 {
+    font-size: 20px;
+    margin-bottom: 13px;
+}
+
+header .shop-cart .item b {
+    color: #dedede;
+    font-weight: 700;
 }
 
 header .presentation {
@@ -98,6 +127,8 @@ header .presentation::before {
     color: #fff;
 }
 
+
+
 main {
     display: flex;
     width: 100%;
@@ -112,6 +143,7 @@ main .item {
     overflow: hidden;
     position: relative;
     padding-bottom: 20px;
+    border-radius: 10px 10px 0 0;
 }
 
 main .item img {
