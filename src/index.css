@@ -58,10 +58,10 @@ header .shop-cart {
     z-index: 10;
     position: absolute;
     top: 30px;
-    right: 0;
+    right: 40px;
     width: 450px;
-    background: #e86100;
-    border-radius: 10px 0 0 10px;
+    background: #ffd2b3;
+    border-radius: 10px;
     padding: 20px;
     padding-bottom: 0;
 }
@@ -89,7 +89,7 @@ header .shop-cart .item h2 {
 }
 
 header .shop-cart .item b {
-    color: #dedede;
+    color: #d15700;
     font-weight: 700;
 }
 
@@ -126,8 +126,6 @@ header .presentation::before {
     font-weight: 600;
     color: #fff;
 }
-
-
 
 main {
     display: flex;
@@ -182,7 +180,7 @@ main .add-to-cart {
 }
 
 main .add-to-cart:hover {
-    transform: scale(1.25) translateY(-5px);
+    transform: scale(1.25) translateY(-5px) translateY(5px); 
 }
 
 footer {

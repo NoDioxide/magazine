@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { FaShoppingBasket } from "react-icons/fa";
-import { FaPizzaSlice } from "react-icons/fa";
 import Order from './Order';
 
 const showOrders = (props) => {
