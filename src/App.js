@@ -2,20 +2,21 @@ import React from "react"
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Items from "./components/Items";
+import Categories from "./components/Categories";
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state ={
       orders: [],
-
+      currentItems: [],
       items: [
         {
           id: 1,
           title: 'Пицца Маргарита',
           img: 'margharita.jpg',
           desc: 'Маргарита самая вкусная ',
-          category: 'pizzas',
+          category: 'classic',
           price: '299₽'
         },
         {
@@ -23,7 +24,7 @@ class App extends React.Component {
           title: 'Пицца Неаполитанская',
           img: 'neopal.jpg',
           desc: 'Нет, неаполитанская самая вкусная ',
-          category: 'pizzas',
+          category: 'unusual',
           price: '549₽'
         },
         {
@@ -31,7 +32,7 @@ class App extends React.Component {
           title: 'Пицца Маринара',
           img: 'marinara.jpg',
           desc: 'Маринара самая сочная ',
-          category: 'pizzas',
+          category: 'classic',
           price: '499₽'
         },
         {
@@ -39,7 +40,7 @@ class App extends React.Component {
           title: 'Пицца Пульеза',
           img: 'pulyesa.jpg',
           desc: 'Пульеза самая пульезная ',
-          category: 'pizzas',
+          category: 'spicy',
           price: '699₽'
         },
         {
@@ -47,7 +48,7 @@ class App extends React.Component {
           title: 'Пицца Четыре сезона',
           img: 'four_seasons.jpg',
           desc: 'Четрые сезона как времена года ',
-          category: 'pizzas',
+          category: 'season',
           price: '599₽'
         },
         {
@@ -55,7 +56,7 @@ class App extends React.Component {
           title: 'Пицца Четыре сыра',
           img: 'four_cheese.jpg',
           desc: 'Четыре сыра и самые сырные сыры ',
-          category: 'pizzas',
+          category: 'season',
           price: '599₽'
         },
         {
@@ -63,7 +64,7 @@ class App extends React.Component {
           title: 'Пицца Капричоза',
           img: 'caprikoza.jpg',
           desc: 'Капрочоза капризничает ',
-          category: 'pizzas',
+          category: 'classic',
           price: '499₽'
         },
         {
@@ -71,7 +72,7 @@ class App extends React.Component {
           title: 'Пицца Кальцоне',
           img: 'calchone.jpg',
           desc: 'Кальцоне как кольцо ',
-          category: 'pizzas',
+          category: 'unusual',
           price: '699₽'
         },
         {
@@ -79,23 +80,41 @@ class App extends React.Component {
           title: 'Пицца Дьябола',
           img: 'demon.jpg',
           desc: 'Дьябола как самый настоящий дьявол ',
-          category: 'pizzas',
-          price: '666₽'
+          category: 'spicy',
+          price: '666₽',
         }
       ]
     }
+    this.state.currentItems = this.state.items
     this.addToOtder = this.addToOtder.bind(this)
+    this.deleteOrder = this.deleteOrder.bind(this)
+    this.chooseCategory = this.chooseCategory.bind(this)
   }
 
 
   render() {
     return(
     <div className="wrapper">
-      <Header orders={this.state.orders}/>
-      <Items items={this.state.items} onAdd={this.addToOtder}/>
+      <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
+      <Categories chooseCategory={this.chooseCategory}/>
+      <Items items={this.state.currentItems} onAdd={this.addToOtder}/>
       <Footer />
     </div>
   )
+  }
+
+  chooseCategory(category){
+    if(category === 'all'){
+      this.setState({currentItems: this.state.items})
+      return
+    }
+    this.setState({
+      currentItems: this.state.items.filter(el => el.category === category)
+    })
+  }
+
+  deleteOrder(id){
+    this.setState({orders: this.state.orders.filter(el => el.id !== id)})
   }
 
   addToOtder(item){

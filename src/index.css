@@ -93,6 +93,27 @@ header .shop-cart .item b {
     font-weight: 700;
 }
 
+header .shop-cart .item .delete-icon {
+    color: #222;
+    float: right;position: relative;
+    top: -20px;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover {
+    color: #e86100;
+    transform: scale(1.25);
+}
+
+header .shop-cart .sum {
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
 header .presentation {
     margin: 50px 0;
     background: url(./img/pizza_bg.jpg) no-repeat;
@@ -125,6 +146,22 @@ header .presentation::before {
     font-size: 15px;
     font-weight: 600;
     color: #fff;
+}
+
+.categories div {
+    display: inline-block;
+    color: black;
+    padding: 10px 20xp;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+    transition: all 500ms ease;
+    font-weight: 600;
+}
+
+.categories div:hover {
+    border-color: rgb(0, 0, 0);
+    color: #ff6e08;
 }
 
 main {
